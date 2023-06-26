@@ -26,6 +26,7 @@ out vec4 fc;                                        // フラグメントの色
 void main(void)
 {
   vec3 nn = vec3(0.0, 0.0, 1.0);                    // 接空間における法線ベクトル
+  nn = texture(normal, tc).xyz * 2.0 - 1.0;
   vec3 nl = normalize(l);                           // 接空間における光線ベクトル
   vec3 nh = normalize(h);                           // 接空間における中間ベクトル
 
